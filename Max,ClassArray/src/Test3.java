@@ -10,7 +10,7 @@ public class Test3 {
         static int count =1;
         static String name =" ";
         Soldier2(){
-           this.name = "º´»ç°íÀ¯¹øÈ£ - ";
+           this.name = "í˜„ìž¬ë³‘ì‚¬ ë²ˆí˜¸ - ";
         }
 
         @Override
