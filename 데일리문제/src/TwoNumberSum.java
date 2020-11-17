@@ -4,15 +4,15 @@ import java.util.Collections;
 
 public class TwoNumberSum {
     public static void main (String [] args){
-        //ÇÁ·Î±×·¡¸Ó½º µÎ¼öÀÇ ÇÕ¹®Á¦ : ÇÏ³ªÀÇ ¹è¿­¿¡¼­ µÎ ¼ö¸¦ »Ì¾Æ ´õÇßÀ»¶§ ³ª¿Ã¼ö ÀÖ´Â ¸ğµç °æ¿ìÀÇ ¼ö
-        // ex. number ¹è¿­¿¡ {2,1,3,4,1} °ªÀÌ ÀÖÀ»½Ã Ãâ·ÂÀ¸·Î´Â {2,3,4,5,6,7} ÀÌ Ãâ·ÂµÇ¾î¾ßÇÔ
-        // ³Ñ°Ü¹ŞÀ» ¹è¿­ ¼±¾ğ
+        //í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ ë‘ìˆ˜ì˜ í•©ë¬¸ì œ : í•˜ë‚˜ì˜ ë°°ì—´ì—ì„œ ë‘ ìˆ˜ë¥¼ ë½‘ì•„ ë”í–ˆì„ë•Œ ë‚˜ì˜¬ìˆ˜ ìˆëŠ” ëª¨ë“  ê²½ìš°ì˜ ìˆ˜
+        // ex. number ë°°ì—´ì— {2,1,3,4,1} ê°’ì´ ìˆì„ì‹œ ì¶œë ¥ìœ¼ë¡œëŠ” {2,3,4,5,6,7} ì´ ì¶œë ¥ë˜ì–´ì•¼í•¨
+        // ë„˜ê²¨ë°›ì„ ë°°ì—´ ì„ ì–¸
         int [] number = {2,1,3,4,1};
 
-        //µ¿ÀûÀ¸·Î ¹è¿­À» ÇÒ´çÇØÁÖ±â À§ÇØ ArrayList·Î ¼±¾ğ
+        //ë™ì ìœ¼ë¡œ ë°°ì—´ì„ í• ë‹¹í•´ì£¼ê¸° ìœ„í•´ ArrayListë¡œ ì„ ì–¸
         ArrayList<Integer> answer = new ArrayList<Integer>();
 
-        //legnth-1À» ÇÏÁö ¾ÊÀ¸¸é i°ªÀÌ 4°¡ µÇ¸é¼­ Arrayindexoutofboundsexception ¹ß»ı
+        //legnth-1ì„ í•˜ì§€ ì•Šìœ¼ë©´ iê°’ì´ 4ê°€ ë˜ë©´ì„œ ë‘ë²ˆì§¸ forë¬¸ì˜ jê°’ì—ì„œ Arrayindexoutofboundsexception ë°œìƒ
         for(int i =0;i<number.length-1;i++){
             for(int j =i+1;j<number.length;j++){
                 int sum = number[i] + number[j];
@@ -22,10 +22,10 @@ public class TwoNumberSum {
             }
 
         }
-        //ArrayList¸¦ Á¤·Ä½ÃÅ°±â À§ÇÑ ¸í·É¾î
+        //ArrayListë¥¼ ì •ë ¬ì‹œí‚¤ê¸° ìœ„í•œ ëª…ë ¹ì–´
         Collections.sort(answer);
 
-        //ÇÁ·Î±×·¡¸Ó½º¿¡´Â returnÀ» int ¹è¿­·Î ¹Ş±â ‹š¹®¿¡ Integer ArrayList¸¦ int ¹è¿­·Î º¯È¯ÇÏ´Â ÀÛ¾÷ ½ÃÀÛ
+        //í”„ë¡œê·¸ë˜ë¨¸ìŠ¤ì—ëŠ” returnì„ int ë°°ì—´ë¡œ ë°›ê¸° Â‹Âšë¬¸ì— Integer ArrayListë¥¼ int ë°°ì—´ë¡œ ë³€í™˜í•˜ëŠ” ì‘ì—… ì‹œì‘
         int [] answer2 = new int[answer.size()];
         for(int i=0;i<answer2.length;i++){
             answer2[i] = answer.get(i).intValue();
