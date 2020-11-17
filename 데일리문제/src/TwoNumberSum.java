@@ -25,7 +25,7 @@ public class TwoNumberSum {
         //ArrayList를 정렬시키기 위한 명령어
         Collections.sort(answer);
 
-        //프로그래머스에는 return을 int 배열로 받기 문에 Integer ArrayList를 int 배열로 변환하는 작업 시작
+        //프로그래머스에는 return을 int 배열로 받기 문에 Integer ArrayList를 int 배열로 변환하는 작업 시작
         int [] answer2 = new int[answer.size()];
         for(int i=0;i<answer2.length;i++){
             answer2[i] = answer.get(i).intValue();
