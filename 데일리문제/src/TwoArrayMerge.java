@@ -2,27 +2,27 @@ import java.util.Arrays;
 
 public class TwoArrayMerge {
     public static void main(String[] args){
-        //¹®Á¦ : »çÀÌÁî°¡ m ÀÎ ¹è¿­ X¿Í »çÀÌÁî°¡ nÀÎ ¹è¿­ Y°¡ ÁÖ¾îÁü
-        // µÎ ¹è¿­Àº ¸ðµÎ Á¤·ÄµÈ »óÅÂ
-        // ¹è¿­ X¿¡´Â Á¤È®È÷ n°³ÀÇ ºñ¾îÀÖ´Â ¼¿ÀÌ ÀÖ´Ù°í ÇÒ ¶§,
-        // ¹è¿­ YÀÇ ¿ø¼ÒµéÀ» X¹è¿­·Î ÇÕÄ¡¸ç ¿ø¼ÒµéÀ» Á¤·Ä½ÃÅ°½Ã¿À
+        //ë¬¸ì œ : ì‚¬ì´ì¦ˆê°€ m ì¸ ë°°ì—´ Xì™€ ì‚¬ì´ì¦ˆê°€ nì¸ ë°°ì—´ Yê°€ ì£¼ì–´ì§
+        // ë‘ ë°°ì—´ì€ ëª¨ë‘ ì •ë ¬ëœ ìƒíƒœ
+        // ë°°ì—´ Xì—ëŠ” ì •í™•ížˆ nê°œì˜ ë¹„ì–´ìžˆëŠ” ì…€ì´ ìžˆë‹¤ê³  í•  ë•Œ,
+        // ë°°ì—´ Yì˜ ì›ì†Œë“¤ì„ Xë°°ì—´ë¡œ í•©ì¹˜ë©° ì›ì†Œë“¤ì„ ì •ë ¬ì‹œí‚¤ì‹œì˜¤
 
-        //¸ñÇ¥ : ½Ã°£º¹Àâµµ ÃÖ¼ÒÈ­
+        //ëª©í‘œ : ì‹œê°„ë³µìž¡ë„ ìµœì†Œí™”
         int [] X = {0,2,0,3,0,5,6,0,0};
         int [] Y = {1,8,9,10,15};
-        int n = 0;    // ºñ¾îÀÖ´Â ¼¿ÀÇ °³¼ö
-        Arrays.sort(X); // ÀçÁ¤·Ä nlogn ½Ã°£ {0,0,0,0,0,2,3,5,6}
+        int n = 0;    // ë¹„ì–´ìžˆëŠ” ì…€ì˜ ê°œìˆ˜
+        Arrays.sort(X); // ìž¬ì •ë ¬ nlogn ì‹œê°„ {0,0,0,0,0,2,3,5,6}
         for(int i=0;i<X.length;i++){
             if(X[i]==0){
                 n++;
             }
         }
         // n = 5
-        for(int i=0;i<n;i++){   // 0¹øºÎÅÍ n¹ø±îÁöÀÇ ºñ¾îÀÖ´Â ¼¿ÀÌ Á¤·ÄµÇ¾îÀÖÀ¸¹Ç·Î °ª »ðÀÔ
+        for(int i=0;i<n;i++){   // 0ë²ˆë¶€í„° në²ˆê¹Œì§€ì˜ ë¹„ì–´ìžˆëŠ” ì…€ì´ ì •ë ¬ë˜ì–´ìžˆìœ¼ë¯€ë¡œ ê°’ ì‚½ìž…
             X[i] = Y[i];    // X = {1,8,9,10,15,2,3,5,6}
         }
 
-        Arrays.sort(X); //nlon ½Ã°£ ÀçÁ¤·Ä  // {1,2,3,5,6,8,9,10,15}
+        Arrays.sort(X); //nlogn ì‹œê°„ ìž¬ì •ë ¬  // {1,2,3,5,6,8,9,10,15}
 
         System.out.println(Arrays.toString(X));
     }
