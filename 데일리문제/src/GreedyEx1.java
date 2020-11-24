@@ -1,40 +1,40 @@
 
 public class GreedyEx1 {
     public static void main(String[] args){
-        //¹®Á¦ Ã¼À°º¹ ºô·ÁÁÖ±â Ã¼À°º¹Àº ¹Ù·Î ¾Õ¹øÈ£, µÞ¹øÈ£¸¸ ºô·ÁÁÙ¼ö ÀÖÀ½ Ex 2¹øÀÌ ºÐ½Ç½Ã 1¹ø, 3¹øÀÌ ºô·ÁÁÖ±â °¡´É
-        // ¿©¹ú Ã¼À°º¹Àº µÎ¹ú ÇÑ¹ú µµ³­´çÇÏ¸é ºô·ÁÁÙ¼ö ¾øÀ½
+        //ë¬¸ì œ ì²´ìœ¡ë³µ ë¹Œë ¤ì£¼ê¸° ì²´ìœ¡ë³µì€ ë°”ë¡œ ì•žë²ˆí˜¸, ë’·ë²ˆí˜¸ë§Œ ë¹Œë ¤ì¤„ìˆ˜ ìžˆìŒ Ex 2ë²ˆì´ ë¶„ì‹¤ì‹œ 1ë²ˆ, 3ë²ˆì´ ë¹Œë ¤ì£¼ê¸° ê°€ëŠ¥
+        // ì—¬ë²Œ ì²´ìœ¡ë³µì€ ë‘ë²Œ í•œë²Œ ë„ë‚œë‹¹í•˜ë©´ ë¹Œë ¤ì¤„ìˆ˜ ì—†ìŒ
 
-        int n = 5;      // ÃÑ ÇÐ»ý¼ö
-        int lost [] = {2,4};    // Ã¼À°º¹ ÀÒ¾î¹ö¸° ÇÐ»ý
-        int reserve [] = {1,3,5};   // ¿©À¯ºÐ
+        int n = 5;      // ì´ í•™ìƒìˆ˜
+        int lost [] = {2,4};    // ì²´ìœ¡ë³µ ìžƒì–´ë²„ë¦° í•™ìƒ
+        int reserve [] = {1,3,5};   // ì—¬ìœ ë¶„
 
         int answer = 0;
-        int noReserve = 0;  // ¿©À¯ºÐÀÖ´Â ÇÐ»ýÁß µµ³­´çÇØ ºô·ÁÁÙ¼ö ¾ø´Â ÇÐ»ý
-        int borrow = 0;  // Ã¼À°º¹ ºô¸°ÇÐ»ý
+        int noReserve = 0;  // ì—¬ìœ ë¶„ìžˆëŠ” í•™ìƒì¤‘ ë„ë‚œë‹¹í•´ ë¹Œë ¤ì¤„ìˆ˜ ì—†ëŠ” í•™ìƒ
+        int borrow = 0;  // ì²´ìœ¡ë³µ ë¹Œë¦°í•™ìƒ
 
-        for(int i=0;i<lost.length;i++){ // ¿©¹ú Ã¼À°º¹ °¡ÁøÇÐ»ýÀÌ Ã¼À°º¹À» µµ³­´çÇß´ÂÁö ¸ÕÀú È®ÀÎ
+        for(int i=0;i<lost.length;i++){ // ì—¬ë²Œ ì²´ìœ¡ë³µ ê°€ì§„í•™ìƒì´ ì²´ìœ¡ë³µì„ ë„ë‚œë‹¹í–ˆëŠ”ì§€ ë¨¼ì € í™•ì¸
             for(int j=0;j<reserve.length;j++){
-                if(lost[i] == reserve[j]){      // Ã¼À°º¹À» ÀÒ¾î¹ö¸° ÇÐ»ýÀÌ ¿©¹ú Ã¼À°º¹ °¡Á®¿Â ÇÐ»ýÀÏ½Ã ³²Àº Ã¼À°º¹Àº ÇÏ³ª ÀÌ¹Ç·Î ºô·ÁÁÖ±â x
-                    noReserve ++;      // ºô·ÁÁÙ¼ö ¾ø´Â ÇÐ»ý Áõ°¡
-                    lost[i] =-1;     // ÇÐ»ýÀº 1¸íÀÌ»ó Áï 1¹øºÎÅÍ ½ÃÀÛÀÌ¹Ç·Î -1¹øÀ¸·Î ÃÊ±âÈ­ 0¹øÀº 1¹ø ÇÐ»ý¶§¹®¿¡ ¹Ù·Î µÞ¹øÈ£·Î ÀÎ½ÄµÉ¼ö ÀÖÀ½.
+                if(lost[i] == reserve[j]){      // ì²´ìœ¡ë³µì„ ìžƒì–´ë²„ë¦° í•™ìƒì´ ì—¬ë²Œ ì²´ìœ¡ë³µ ê°€ì ¸ì˜¨ í•™ìƒì¼ì‹œ ë‚¨ì€ ì²´ìœ¡ë³µì€ í•˜ë‚˜ ì´ë¯€ë¡œ ë¹Œë ¤ì£¼ê¸° x
+                    noReserve ++;      // ë¹Œë ¤ì¤„ìˆ˜ ì—†ëŠ” í•™ìƒ ì¦ê°€
+                    lost[i] =-1;     // í•™ìƒì€ 1ëª…ì´ìƒ ì¦‰ 1ë²ˆë¶€í„° ì‹œìž‘ì´ë¯€ë¡œ -1ë²ˆìœ¼ë¡œ ì´ˆê¸°í™” 0ë²ˆì€ 1ë²ˆ í•™ìƒë•Œë¬¸ì— ë°”ë¡œ ì•žë²ˆí˜¸ë¡œ ì¸ì‹ë ìˆ˜ ìžˆìŒ.
                     reserve[j] =-1;
-                    break;      // ÃÊ±âÈ­ ¿Ï·áÈÄ µÎ¹øÂ° for¹®À» break ÇÏ¿© ºüÁ®³ª°£´Ù.
+                    break;      // ì´ˆê¸°í™” ì™„ë£Œí›„ ë‘ë²ˆì§¸ forë¬¸ì„ break í•˜ì—¬ ë¹ ì ¸ë‚˜ê°„ë‹¤.
                 }
             }
         }
 
-        for(int i=0;i<lost.length;i++){     // Ã¼À°º¹À» ÀÒ¾î¹ö¸° ÇÐ»ýÀÌ ºô¸®´Â ºÎºÐ
+        for(int i=0;i<lost.length;i++){     // ì²´ìœ¡ë³µì„ ìžƒì–´ë²„ë¦° í•™ìƒì´ ë¹Œë¦¬ëŠ” ë¶€ë¶„
             for(int j=0;j<reserve.length;j++){
-                if(lost[i]==reserve[j]-1 || lost[i] == reserve[j] + 1){ // ¹Ù·Î ¾Õ¹øÈ£, µÞ¹øÈ£¸¸ ºô·ÁÁÙ¼ö ÀÖ´Ù°í ÇßÀ¸¹Ç·Î if¹® Ãß°¡
-                    borrow++;       // ºô¸° ÇÐ»ý Áõ°¡
-                    reserve[j] = -1;    // -1·Î ÃÊ±âÈ­ ½ÃÄÑ ºô·ÁÁÙ¼ö ¾øµµ·Ï ¸¸µë
-                    break;  // ÃÊ±âÈ­ ¿Ï·áÈÄ µÎ¹øÂ° for¹®À» break ÇÏ¿© ºüÁ®³ª°£´Ù.
+                if(lost[i]==reserve[j]-1 || lost[i] == reserve[j] + 1){ // ë°”ë¡œ ì•žë²ˆí˜¸, ë’·ë²ˆí˜¸ë§Œ ë¹Œë ¤ì¤„ìˆ˜ ìžˆë‹¤ê³  í–ˆìœ¼ë¯€ë¡œ ifë¬¸ ì¶”ê°€
+                    borrow++;       // ë¹Œë¦° í•™ìƒ ì¦ê°€
+                    reserve[j] = -1;    // -1ë¡œ ì´ˆê¸°í™” ì‹œì¼œ ë¹Œë ¤ì¤„ìˆ˜ ì—†ë„ë¡ ë§Œë“¬
+                    break;  // ì´ˆê¸°í™” ì™„ë£Œí›„ ë‘ë²ˆì§¸ forë¬¸ì„ break í•˜ì—¬ ë¹ ì ¸ë‚˜ê°„ë‹¤.
                 }
             }
         }
 
-        answer = n-lost.length + noReserve + borrow;    // Ã¼À°¼ö¾÷À» µéÀ»¼ö ÀÖ´Â ÇÐ»ý : ÃÑÀÎ¿ø - Ã¼À°º¹ ÀÒ¾î¹ö¸° ÇÐ»ý¼ö + Ã¼À°º¹ ¿©¹úÀÌÁö¸¸ µµ³­´çÇØ ºô·ÁÁÙ¼ö ¾ø´Â ÇÐ»ý
-                                                        //                            + Ã¼À°º¹ ºô¸°ÇÐ»ý;
+        answer = n-lost.length + noReserve + borrow;    // ì²´ìœ¡ìˆ˜ì—…ì„ ë“¤ì„ìˆ˜ ìžˆëŠ” í•™ìƒ : ì´ì¸ì› - ì²´ìœ¡ë³µ ìžƒì–´ë²„ë¦° í•™ìƒìˆ˜ + ì²´ìœ¡ë³µ ì—¬ë²Œì´ì§€ë§Œ ë„ë‚œë‹¹í•´ ë¹Œë ¤ì¤„ìˆ˜ ì—†ëŠ” í•™ìƒ
+                                                        //                            + ì²´ìœ¡ë³µ ë¹Œë¦°í•™ìƒ;
 
         System.out.println(answer);
     }
