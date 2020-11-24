@@ -39,6 +39,6 @@ public class GreedyEx1_1 {
             //answer = 5
         System.out.println(answer-2);   // array[0]번째와 array[n+1] 때문  (0번째 학생과 마지막 학생 +1번째)
         System.out.println(Arrays.toString(array));
- 
+
     }
 }
