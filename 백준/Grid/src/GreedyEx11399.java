@@ -4,29 +4,29 @@ import java.util.Scanner;
 public class GreedyEx11399 {
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
-        int people = sc.nextInt();      // 5¸íÀÇ »ç¶÷ÀÌ ÀÖ´Ù°í °¡Á¤
+        int people = sc.nextInt();      // 5ëª…ì˜ ì‚¬ëŒì´ ìˆë‹¤ê³  ê°€ì •
         int time [] = new int[people];
         int totalTime [] = new int[people];
         int sum = 0;
         int preTime = 0;
         for(int i=0;i<time.length;i++) {
-            int Input = sc.nextInt();       // °¢°¢ 3, 1, 4, 3, 2 ºĞÀÌ °É¸°´Ù°í °¡Á¤
+            int Input = sc.nextInt();       // ê°ê° 3, 1, 4, 3, 2 ë¶„ì´ ê±¸ë¦°ë‹¤ê³  ê°€ì •
             time[i] = Input;
         }
-        // µ·À» »Ì´Â ½Ã°£ÀÌ °¡Àå ÃÖ¼Ò -> »¡¸®»Ì´Â»ç¶÷ÀÌ ¸Ç¾ÕÀ¸·Î... Á¤·Ä ½ÃÅ°¸é µÈ´Ù.
+        // ëˆì„ ë½‘ëŠ” ì‹œê°„ì´ ê°€ì¥ ìµœì†Œ -> ë¹¨ë¦¬ë½‘ëŠ”ì‚¬ëŒì´ ë§¨ì•ìœ¼ë¡œ... ì •ë ¬ ì‹œí‚¤ë©´ ëœë‹¤.
 
-        Arrays.sort(time);      // 1 2 3 3 4    1 -> sum =1 pre =1 2 -> sum : 1 + 2 + 1 = 4 pre =4 3 -> 4+3+
+        Arrays.sort(time);      // 1 2 3 3 4   
 
         for(int i=0;i<time.length;i++){
             sum += time[i];
-            totalTime[i] = sum;  // 1, 3 , 6 ,9 ,13 ÀÌ ´ã±è
+            totalTime[i] = sum;  // 1, 3 , 6 ,9 ,13 ì´ ë‹´ê¹€
         }
-        sum =0;     // ÃÊ±âÈ­
+        sum =0;     // ì´ˆê¸°í™”
         for(int i=0;i<totalTime.length;i++){
             sum += totalTime[i];
         }
-        System.out.println(sum);       // 32 Ãâ·Â
+        System.out.println(sum);       // 32 ì¶œë ¥
 
-        // ÃÑ ½Ã°£º¹Àâµµ : O(nlogn)
+        // ì´ ì‹œê°„ë³µì¡ë„ : O(nlogn)
     }
 }
